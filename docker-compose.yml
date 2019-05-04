@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  server:
+    image: nginx-rtmp
+    ports:
+      - "1935:1935"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+
+  video-cutter:
+    image: video-cutter 
+    command: -i rtmp://server:1935/live/test -vf fps=1 -strftime 1 "/tmp/photos/%Y-%m-%d_%H-%M-%S.jpg"
+    volumes:
+      - ./data:/tmp/photos
+    depends_on:
+      - server
+ 
+  tg-notificator:
+    image: tg-notificator
+    volumes:
+      - ./data:/tmp/photos
+    depends_on:
+      - video-cutter
+
+

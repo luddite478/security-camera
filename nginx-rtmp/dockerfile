@@ -1,0 +1,5 @@
+FROM tiangolo/nginx-rtmp
+
+RUN mkdir /tmp/hls
+
+COPY nginx.conf /enc/nginx/nginx.conf
