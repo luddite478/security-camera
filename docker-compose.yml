@@ -14,7 +14,7 @@ services:
 
   video-cutter:
     image: video-cutter 
-    command: -i rtmp://server:1935/live/test -vf fps=1 -strftime 1 "/tmp/photos/%Y-%m-%d_%H-%M-%S.jpg"
+    command: -i rtmp://server:1935/live/test -vf fps=1/3 -strftime 1 -y "/tmp/photos/%Y-%m-%d_%H-%M-%S.jpg"
     volumes:
       - ./data:/tmp/photos
     depends_on:

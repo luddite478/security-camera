@@ -5,7 +5,9 @@
   "main": "index.js",
   "dependencies": {
      "dotenv": "*",
-     "node-telegram-bot-api": "*"
+     "node-telegram-bot-api": "*",
+     "chokidar": "*",
+     "find-remove": "*"
   },
   "devDependencies": { },
   "scripts": {
