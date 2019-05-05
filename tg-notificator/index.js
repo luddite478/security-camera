@@ -9,7 +9,7 @@ const bot = new TelegramBot(token, {polling: true})
 
 const photo = '/tmp/photos/photo1.png'
 
-bot.sendPhoto(chat_id, photo);
+bot.sendPhoto(chat_id, photo).then(res => console.log(res))
 
 try {
   if (fs.existsSync(photo)) {

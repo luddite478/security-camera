@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-     "dotenv": "*",
-     "node-telegram-bot-api": "*"
+     "express": "*",
+     "dotenv": "*"
   },
   "devDependencies": { },
   "scripts": {

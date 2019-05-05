@@ -1,12 +1,16 @@
 version: '3'
 
 services:
+  rtmp-authenticator:
+    image: rtmp-authenticator
   server:
     image: nginx-rtmp
     ports:
       - "1935:1935"
     volumes:
-      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx-rtmp/nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - rtmp-authenticator
 
   video-cutter:
     image: video-cutter 
