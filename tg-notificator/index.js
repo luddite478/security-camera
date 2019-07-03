@@ -40,7 +40,6 @@ const isTokenOk = token => token === apiToken
 app.use(helmet())
 
 app.post(`/u/${apiEndpoint}`, (req, res) => {
-  console.log("SOMETHING");
   if(!isTokenOk(req.headers.token)){
     bot.sendMessage(chat_id, `SOMEONE IS USING WRONG TOKEN TO ACCESS API`)
     res.sendStatus(401)
@@ -48,7 +47,6 @@ app.post(`/u/${apiEndpoint}`, (req, res) => {
   }
 
   upload(req, res, async (err) => {
-    console.log('HERE')
     if (err) {
       bot.sendMessage(chat_id, `FAILED TO UPLOAD ${req.file.filename} TO SEVER: ${e}`)
       res.sendStatus(500)
