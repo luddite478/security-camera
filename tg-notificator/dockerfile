@@ -5,6 +5,7 @@ RUN mkdir /app
 COPY index.js /app
 COPY package.json /app 
 COPY .env /app
+COPY secrets/ app/secrets/
 
 WORKDIR /app
 

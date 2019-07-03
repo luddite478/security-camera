@@ -1,20 +1,17 @@
 {
   "name": "tg-notificator",
   "version": "1.0.0",
-  "description": "",
+  "description": "security cam",
   "main": "index.js",
   "dependencies": {
-     "dotenv": "*",
-     "node-telegram-bot-api": "*",
-     "chokidar": "*",
-     "find-remove": "*"
+    "dotenv": "*",
+    "express": "*",
+    "helmet": "*",
+    "multer": "*",
+    "node-telegram-bot-api": "*"
   },
-  "devDependencies": { },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node index.js"
   },
-  "author": "",
   "license": "ISC"
 }
-
